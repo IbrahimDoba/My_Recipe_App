@@ -27,7 +27,7 @@ const NothingToDisplay = () => {
     <Container>
       <Wrapper>
         <ErrIcon/>
-        <ErrText>Nothing To Dispaly Right Now!</ErrText>
+        <ErrText>Nothing To Dispaly Right Now!!</ErrText>
       </Wrapper>
     </Container>
   )

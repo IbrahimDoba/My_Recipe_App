@@ -23,7 +23,7 @@ export const TopDiv = styled.div`
   flex: 1;
   border-bottom: 2px inset white;
   display: flex;
-  padding-left: 20px;
+  padding-left: 18px;
   padding-bottom: 20px;
   box-shadow:0px 3px 0px 1px grey;
   background: linear-gradient(white, #e8e8e8); ;
