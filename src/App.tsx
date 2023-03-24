@@ -1,6 +1,5 @@
 import "./App.css";
 import Navbar from "./Components/0Navbar/Navbar";
-import Homepage from "./Components/Homepage";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import RecipeDetailPage from "./Components/2DetailsPage/RecipeDetailPage";
 import RecipieSection from "./Components/1DisplaySection/RecipeSection";
