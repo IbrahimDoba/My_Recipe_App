@@ -5,8 +5,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(white, #D2FFD7); ;
-
+  background: linear-gradient(white, #e3ffe6, #F2FFF4);
 `;
 export const Wrapper = styled.div`
   display: flex;
@@ -18,6 +17,9 @@ export const Wrapper = styled.div`
   box-shadow: 1px 6px 6px 5px grey;
   padding: 20px 0 0px 0;
   margin-bottom: 20px;
+  @media only screen and (max-width: 767px) {
+   min-width: 200px;
+  }
 `;
 export const TopDiv = styled.div`
   flex: 1;
@@ -25,23 +27,29 @@ export const TopDiv = styled.div`
   display: flex;
   padding-left: 18px;
   padding-bottom: 20px;
-  box-shadow:0px 3px 0px 1px grey;
-  background: linear-gradient(white, #e8e8e8); ;
+  box-shadow: 0px 3px 0px 1px grey;
+  background: linear-gradient(white, #e8e8e8);
   z-index: 10;
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 export const TopLeftDiv = styled.div`
   display: flex;
-  /* border: 2px solid red; */
   flex: 1;
 `;
 
 export const RImg = styled.img`
   width: 60%;
   height: auto;
+  @media only screen and (max-width: 767px) {
+   width: auto;
+  }
 `;
 export const TopRightDiv = styled.div`
   flex: 1;
-  /* border: 2px solid green; */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -78,28 +86,27 @@ export const ShareLink = styled.div`
 export const ShareLinkBtn = styled.button``;
 export const BottomDiv = styled.div`
   flex: 1;
-  /* border: 2px solid black; */
   display: flex;
   background: linear-gradient(#e8e8e8, white);
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+  }
 `;
 export const LeftBotDiv = styled.div`
   display: flex;
   flex-direction: column;
-  /* border: 2px solid blue; */
   justify-content: top;
   flex: 1;
   padding: 20px;
 `;
 export const IngDiv = styled.div`
   display: flex;
-  /* border: 2px solid green; */
   height: 50%;
   width: 100%;
   justify-content: top;
   flex-direction: column;
 `;
 export const IngTop = styled.h3`
-  /* border-bottom: 2px solid yellow; */
   border-bottom: 2px solid lightgreen;
   padding-bottom: 5px;
 `;
@@ -107,7 +114,8 @@ export const Ingredient = styled.p``;
 export const RLinkBtnDiv = styled.div``;
 export const IngBot = styled.h3`
   border-bottom: 2px solid lightgreen;
-  padding-bottom: 5px;`;
+  padding-bottom: 5px;
+`;
 export const RightBotDiv = styled.div`
   flex: 1;
   padding: 20px;
@@ -120,20 +128,17 @@ export const Nutri = styled.h3`
 export const NutriSpan = styled.p`
   font-size: 14px;
   font-weight: 600;
-`
+`;
 export const NutriDiv = styled.div`
-  /* border: 2px solid brown; */
   display: flex;
-  /* border-bottom: 2px solid red; */
   justify-content: top;
 `;
 export const NutriDivOne = styled.div`
-  /* border: 2px solid red; */
   display: flex;
   flex-direction: column;
   flex: 1;
   text-align: center;
-  span{
+  span {
     font-size: 18px;
   }
 `;

@@ -11,20 +11,21 @@ import {
 } from "./NavbarStyles";
 import { useState } from "react";
 import { fetchData } from "../Services/ApiConfig";
-import RecipieSection from "../1DisplaySection/RecipeSection";
 import { RecipeData } from "../Services/Types";
+import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 type NavbarProps = {
   setRecipes: React.Dispatch<React.SetStateAction<RecipeData[]>>;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-
-const Navbar = ({ setRecipes,setIsLoading}: NavbarProps, ) => {
+const Navbar = ({ setRecipes, setIsLoading }: NavbarProps) => {
   const [keyword, setKeyword] = useState("");
+  const history = useNavigate();
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
-    setIsLoading(true)
+    setIsLoading(true);
     event.preventDefault();
     setKeyword("");
     try {
@@ -32,16 +33,27 @@ const Navbar = ({ setRecipes,setIsLoading}: NavbarProps, ) => {
       const data = response.data;
       setRecipes(data.hits);
       console.log("data obj", data);
-      setIsLoading(false)
+      setIsLoading(false);
     } catch (error) {
       console.log("Something went wrong", error);
     }
   }
+  function handleClick() {
+    if (window.location.pathname !== "/") {
+      history("/");
+    }
+  }
+  const ResetClick = () => {
+    setRecipes([]);
+  };
 
   return (
     <Container>
       <Left>
-        <Logo>SILVER.</Logo>
+        <Link style={{ textDecoration: "none", color: "inherit" }} to="/">
+          {" "}
+          <Logo onClick={ResetClick}>SILVER.</Logo>
+        </Link>
       </Left>
       <Right>
         <InputCon onSubmit={handleSubmit}>
@@ -53,7 +65,7 @@ const Navbar = ({ setRecipes,setIsLoading}: NavbarProps, ) => {
             onChange={(event) => setKeyword(event.target.value)}
           />
           <SubmitDiv>
-            <SubmitBtn type="submit">
+            <SubmitBtn type="submit" onClick={handleClick}>
               <SearchIcon />
             </SubmitBtn>
           </SubmitDiv>

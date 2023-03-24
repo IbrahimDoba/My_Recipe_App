@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { fetchData } from "../Services/ApiConfig";
+
 import { Link } from "react-router-dom";
 import {
   RCalories,
@@ -20,12 +19,11 @@ interface RecipeSectionProps {
 }
 
 const RecipieSection = ({ Recipes, loading }: RecipeSectionProps) => {
-  console.log("Rpies obj", Recipes);
-  console.log("load", loading);
 
   if (!Recipes || Recipes.length === 0) {
     return <NothingToDisplay />;
   }
+ 
 
   return (
     <RContainer>

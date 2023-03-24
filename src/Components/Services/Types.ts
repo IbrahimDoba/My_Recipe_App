@@ -23,9 +23,9 @@ export type DetailRecipes = {
   ingredientLines: string[];
   calories: number;
   cuisineType: string;
-  dietLabels: string;
+  dietLabels: string[];
   healthLabels: string[];
-  cautions: string;
+  cautions: string[];
   url: string;
   totalNutrients: {
     ENERC_KCAL: totalNutrients; // Energy
