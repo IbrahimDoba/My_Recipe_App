@@ -7,10 +7,3 @@ export async function fetchData(keyword: string): Promise<AxiosResponse<any>> {
   return response;
 }
 
-export async function FetchID(id: number): Promise<AxiosResponse<any>> {
-    const response = await axios.get (
-        `https://api/recipes/v2/${id}`
-
-    )
-    return response
-}

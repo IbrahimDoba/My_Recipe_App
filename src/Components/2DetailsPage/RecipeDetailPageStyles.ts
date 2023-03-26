@@ -5,7 +5,7 @@ export const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(white, #e3ffe6, #F2FFF4);
+  background: linear-gradient(white, #e3ffe6, #f2fff4);
 `;
 export const Wrapper = styled.div`
   display: flex;
@@ -18,7 +18,7 @@ export const Wrapper = styled.div`
   padding: 20px 0 0px 0;
   margin-bottom: 20px;
   @media only screen and (max-width: 767px) {
-   min-width: 200px;
+    min-width: 200px;
   }
 `;
 export const TopDiv = styled.div`
@@ -45,7 +45,7 @@ export const RImg = styled.img`
   width: 60%;
   height: auto;
   @media only screen and (max-width: 767px) {
-   width: auto;
+    width: auto;
   }
 `;
 export const TopRightDiv = styled.div`
@@ -181,6 +181,16 @@ export const EachNutriDiv = styled.div`
   }
   p {
     width: 50%;
+  }
+
+  @media only screen and (max-width: 767px) {
+    justify-content: center;
+    align-items: center;
+    span {
+      width: 100%;
+    }
+    p {
+    }
   }
 `;
 export const TotalNutrientsDiv = styled.div`

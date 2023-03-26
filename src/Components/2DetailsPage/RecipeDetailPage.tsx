@@ -33,7 +33,7 @@ import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { DetailRecipes } from "../Services/Types";
 import { Link } from "react-router-dom";
-import NothingToDisplay from "../Assets/NothingToDisplay";
+import LoadingSpinner from "../Assets/LoadingSpinner";
 
 const RecipeDetailPage: React.FC = () => {
   const [recipeDetails, setRecipeDetails] = useState<DetailRecipes | null>(
@@ -63,7 +63,7 @@ const RecipeDetailPage: React.FC = () => {
   return (
     <Container>
       {loading ? (
-        <NothingToDisplay />
+        <LoadingSpinner />
       ) : (
         <Wrapper>
           <TopDiv>
@@ -139,12 +139,12 @@ const RecipeDetailPage: React.FC = () => {
                 {recipeDetails && (
                   <NutriDivOne>
                     <span>
-                    {recipeDetails.dietLabels.map((diet, index) => (
-                      <React.Fragment key={diet}>
-                        {diet}
-                        {index !== diet.length - 1 && ", "}
-                      </React.Fragment>
-                    ))}
+                      {recipeDetails.dietLabels.map((diet, index) => (
+                        <React.Fragment key={diet}>
+                          {diet}
+                          {index !== diet.length - 1 && ", "}
+                        </React.Fragment>
+                      ))}
                       {recipeDetails.dietLabels.length === 0 && (
                         <span>None</span>
                       )}{" "}
@@ -179,9 +179,7 @@ const RecipeDetailPage: React.FC = () => {
                         {index !== caution.length - 1 && ", "}
                       </React.Fragment>
                     ))}
-                    {recipeDetails.cautions.length === 0 && (
-                      <span>None</span>
-                    )}{" "}
+                    {recipeDetails.cautions.length === 0 && <span>None</span>}{" "}
                   </CautionText>
                 </CautionDiv>
               )}

@@ -8,7 +8,7 @@ import { useState } from "react";
 
 function App() {
   const [Recipes, setRecipes] = useState<RecipeData[]>([]);
-  const [loading, setIsLoading] = useState(false);
+  const [loading, setIsLoading] = useState<boolean>(true);
 
   return (
     <Router>

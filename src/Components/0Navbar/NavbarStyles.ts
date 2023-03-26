@@ -44,7 +44,7 @@ export const SearchCon = styled.input`
   margin-right: 10px;
   font-size: 16px;
   @media only screen and (max-width: 767px) {
-    width: 40%;
+    width: 60%;
     font-size: 11px;
   }
 `;

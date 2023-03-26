@@ -1,4 +1,3 @@
-
 import { Link } from "react-router-dom";
 import {
   RCalories,
@@ -10,8 +9,8 @@ import {
   RWrapper,
 } from "./RecipeSectionStyles";
 import { RecipeData } from "../Services/Types";
-import NothingToDisplay from "../Assets/NothingToDisplay";
 import LoadingSpinner from "../Assets/LoadingSpinner";
+import ImageDisplay from "../Assets/ImageDisplay";
 
 interface RecipeSectionProps {
   Recipes: RecipeData[];
@@ -19,11 +18,13 @@ interface RecipeSectionProps {
 }
 
 const RecipieSection = ({ Recipes, loading }: RecipeSectionProps) => {
-
+  console.log(loading);
   if (!Recipes || Recipes.length === 0) {
-    return <NothingToDisplay />;
+    return <ImageDisplay />;
   }
- 
+  if (loading) {
+    return <LoadingSpinner />;
+  }
 
   return (
     <RContainer>
@@ -34,7 +35,12 @@ const RecipieSection = ({ Recipes, loading }: RecipeSectionProps) => {
           const label = Recipe.recipe.label;
           // console.log(`Recipe ID : ${id}`);
           return (
-            <Link style={{textDecoration: "none", color: "inherit" }} to={`/recipe/${id}`} id={id} key={id}>
+            <Link
+              style={{ textDecoration: "none", color: "inherit" }}
+              to={`/recipe/${id}`}
+              id={id}
+              key={id}
+            >
               <RecipieCard>
                 {loading ? (
                   <LoadingSpinner />

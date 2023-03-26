@@ -32,8 +32,9 @@ const Navbar = ({ setRecipes, setIsLoading }: NavbarProps) => {
       const response = await fetchData(keyword);
       const data = response.data;
       setRecipes(data.hits);
-      console.log("data obj", data);
       setIsLoading(false);
+
+      console.log("data obj", data);
     } catch (error) {
       console.log("Something went wrong", error);
     }
